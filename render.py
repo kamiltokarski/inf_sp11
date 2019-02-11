@@ -36,5 +36,5 @@ for post in posts_raw:
     posts.append(Post(post[1], post[0], post[2]))
 
 html = template.render(posts=posts)
-with open('index.html', 'w', encoding='utf-8') as out_f:
+with open('docs/index.html', 'w', encoding='utf-8') as out_f:
     out_f.write(html)
