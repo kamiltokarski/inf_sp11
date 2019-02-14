@@ -49,3 +49,7 @@ footer {
 code {
     font-family: 'Source Code Pro', 'Ubuntu Mono', monospace !important;
 }
+
+hr {
+    margin: 0;
+}

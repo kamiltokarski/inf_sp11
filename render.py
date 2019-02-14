@@ -29,7 +29,7 @@ for fpath in glob.iglob('_posts/*.md'):
     post_created = time.ctime(os.path.getctime(fpath))
 
     posts_raw.append([post_created, post_html, post_modified])
-posts_raw = sorted(posts_raw)
+posts_raw = reversed(sorted(posts_raw))
 
 posts = []
 for post in posts_raw:
