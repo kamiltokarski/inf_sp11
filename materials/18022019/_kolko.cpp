@@ -32,6 +32,21 @@ int main() {
     // ktora opcje aktualnie zaznaczamy
     int zaz_opcja = 1;
 
+    // gra
+    int tablica[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    /*
+     * tablica = [
+     *      [1, 2, 3],
+     *      [4, 5, 6],
+     *      [7, 8, 9]
+     * ]
+     */
+
     // czy powinnismy rysowac ekran
     bool rysuj = true;
     bool konczmy = false;
@@ -56,7 +71,7 @@ int main() {
         }
         if(GetKeyState(VK_SPACE) & wcisniecie) {
             if(ekran == 0) {
-                if(zaz_opcje == 1) {
+                if(zaz_opcja == 1) {
                     ekran = 1;
                     rysuj = true;
                 }
@@ -96,6 +111,33 @@ int main() {
 
                 rysuj = false;
                 Sleep(50);
+            }
+        }
+
+        if(ekran == 1) {
+            if(rysuj == true) {
+                 system("cls");
+
+                cout << " PvP";
+                for(int i = 0; i < (wys / 2 - 3); ++i) {
+                    cout << endl;
+                }
+                string linia = "-------";
+                wyp_srod(linia, szer / 2);
+
+                for(int i = 0; i < 3; ++i) {
+                    string rzadek = "|";
+                    for(int j = 0; j < 3; ++j) {
+                        if(tablica[i][j] > 0) {
+                            rzadek += ('0' + tablica[i][j]);
+                        }
+                        rzadek  += "|";
+                    }
+                    wyp_srod(rzadek, szer / 2);
+                    wyp_srod(linia, szer / 2);
+                }
+
+                rysuj = false;
             }
         }
 
