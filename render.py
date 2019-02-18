@@ -3,6 +3,7 @@ import time
 import glob
 import codecs
 import os.path
+from dateutil import parser
 
 import markdown
 
@@ -28,8 +29,8 @@ for fpath in glob.iglob('_posts/*.md'):
     post_modified = time.ctime(os.path.getmtime(fpath))
     post_created = time.ctime(os.path.getctime(fpath))
 
-    posts_raw.append([post_created, post_html, post_modified])
-posts_raw = reversed(sorted(posts_raw))
+    posts_raw.append([parser.parse(post_created), post_html, post_modified])
+posts_raw = reversed(sorted(posts_raw, key=lambda x: x[0]))
 
 posts = []
 for post in posts_raw:
