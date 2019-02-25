@@ -63,7 +63,7 @@ int main() {
                 wynik_plik_out << wynik;
                 wynik_plik_out.close();
 
-                ciastko = "_*ciastko*_";
+                ciastko = "_* ciastko *_";
 
                 // cout << "SPACJA" << endl;
                 trzeba_odrysowac = true;
@@ -103,8 +103,6 @@ int main() {
             trzeba_odrysowac = false;
         }
     }
-
-    
 
     return 0;
 }
